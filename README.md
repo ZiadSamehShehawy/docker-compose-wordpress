@@ -1,7 +1,6 @@
-# docker-compose-wordpress
 # Docker Compose WordPress
-
 This is a simple Docker Compose setup for running WordPress with MySQL.
+
 # Configuration.
 
     WordPress:
