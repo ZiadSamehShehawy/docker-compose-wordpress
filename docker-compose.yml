@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: elzoz
+      WORDPRESS_DB_PASSWORD: P@ssw0rd
+      WORDPRESS_DB_NAME: customdb
+    volumes:
+      - wordpress:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: customdb
+      MYSQL_USER: elzoz
+      MYSQL_PASSWORD: P@ssw0rd
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
