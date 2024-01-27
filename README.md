@@ -31,3 +31,6 @@ Start the containers:
 
 2- Access WordPress at http://localhost:8080
 
+3- Login DB:
+sudo docker exec -it ubuntu-db-1 mysql -u elzoz -p
+
