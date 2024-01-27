@@ -6,7 +6,7 @@ services:
     ports:
       - 8080:80
     environment:
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: customdb
       WORDPRESS_DB_USER: elzoz
       WORDPRESS_DB_PASSWORD: P@ssw0rd
       WORDPRESS_DB_NAME: customdb
