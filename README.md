@@ -73,3 +73,9 @@ docker-compose --version
    ```bash
    sudo docker exec -it ubuntu-db-1 mysql -u elzoz -p
    ```
+5. To login to the MySQL database:
+   ```bash
+   sudo docker exec -it ubuntu-wordpress-1 /bin/bash
+   ```
+
+
