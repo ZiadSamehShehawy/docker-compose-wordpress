@@ -18,6 +18,8 @@ services:
   db:
     image: mysql:8.0
     restart: always
+    ports:
+      - 3306:3306  # Map MySQL container port to host port
     environment:
       MYSQL_DATABASE: customdb
       MYSQL_USER: elzoz
