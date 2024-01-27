@@ -6,7 +6,7 @@ services:
     ports:
       - 8080:80
     environment:
-      WORDPRESS_DB_HOST: customdb
+      WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: elzoz
       WORDPRESS_DB_PASSWORD: P@ssw0rd
       WORDPRESS_DB_NAME: customdb
@@ -14,12 +14,14 @@ services:
       - wordpress:/var/www/html
     depends_on:
       - db
+    networks:
+      - my_network
 
   db:
     image: mysql:8.0
     restart: always
     ports:
-      - 3306:3306  # Map MySQL container port to host port
+      - 3306:3306
     environment:
       MYSQL_DATABASE: customdb
       MYSQL_USER: elzoz
@@ -27,6 +29,11 @@ services:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
     volumes:
       - db:/var/lib/mysql
+    networks:
+      - my_network
+
+networks:
+  my_network:
 
 volumes:
   wordpress:
